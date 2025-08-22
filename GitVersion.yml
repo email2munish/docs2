@@ -1,6 +1,3 @@
 mode: Mainline
-branches:
-  main:
-    regex: ^main$
-    increment: Patch
-    is-mainline: true
+commit-message-incrementing: Enabled
+patch-version-bump-message: '\+semver:\s?(fix|patch)'
