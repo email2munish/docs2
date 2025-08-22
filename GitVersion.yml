@@ -13,6 +13,7 @@ update-build-number: true
 semantic-version-format: Strict
 strategies:
 - Mainline
+- ConfiguredNextVersion
 branches:
   develop:
     mode: ContinuousDelivery
