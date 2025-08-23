@@ -71,7 +71,7 @@ branches:
     is-source-branch-for: ['feature']
     tracks-release-branches: false
     is-release-branch: false
-    is-main-branch: false
+    is-main-branch: true
     pre-release-weight: 30000
   pull-request:
     mode: ContinuousDelivery
