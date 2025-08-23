@@ -23,9 +23,8 @@ branches:
     track-merge-target: true
     track-merge-message: true
     regex: ^dev(elop)?(ment)?$
-    source-branches:
-    - main
-    is-source-branch-for: []
+    source-branches:['main']
+    is-source-branch-for: ['feature', 'hotfix', 'support','release']
     tracks-release-branches: true
     is-release-branch: false
     is-main-branch: false
@@ -38,8 +37,8 @@ branches:
     track-merge-target: false
     track-merge-message: true
     regex: ^master$|^main$
-    source-branches: []
-    is-source-branch-for: []
+    source-branches: ['main']
+    is-source-branch-for: ['develop', 'feature', 'hotfix', 'support','release']
     tracks-release-branches: false
     is-release-branch: false
     is-main-branch: true
@@ -53,10 +52,8 @@ branches:
       when-current-commit-tagged: false
     track-merge-target: false
     regex: ^releases?(?<BranchName>.+)
-    source-branches:
-    - main
-    - support
-    is-source-branch-for: []
+    source-branches: ['develop', 'hotfix', 'support','release', 'main']
+    is-source-branch-for: ['develop', 'feature', 'hotfix', 'support','release']
     tracks-release-branches: false
     is-release-branch: true
     is-main-branch: false
