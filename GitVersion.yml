@@ -70,11 +70,11 @@ branches:
     track-merge-target: false
     track-merge-message: true
     regex: ^feature?(?<BranchName>.+)
-    source-branches: []
+    source-branches: ['main', 'develop', 'feature', 'hotfix', 'support','release']
     is-source-branch-for: []
     tracks-release-branches: false
     is-release-branch: false
-    is-main-branch: true
+    is-main-branch: false
     pre-release-weight: 30000
   pull-request:
     mode: ContinuousDelivery
