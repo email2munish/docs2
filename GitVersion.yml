@@ -23,9 +23,8 @@ branches:
     track-merge-target: true
     track-merge-message: true
     regex: ^dev(elop)?(ment)?$
-    source-branches:
-    - main
-    is-source-branch-for: []
+    source-branches: ['main']
+    is-source-branch-for: ['feature', 'hotfix', 'support','release']
     tracks-release-branches: true
     is-release-branch: false
     is-main-branch: false
@@ -38,14 +37,14 @@ branches:
     track-merge-target: false
     track-merge-message: true
     regex: ^master$|^main$
-    source-branches: []
-    is-source-branch-for: []
+    source-branches: ['main']
+    is-source-branch-for: ['develop', 'feature', 'hotfix', 'support','release']
     tracks-release-branches: false
     is-release-branch: false
     is-main-branch: true
     pre-release-weight: 55000
   release:
-    mode: ManualDeployment
+    mode: ContinuousDelivery
     label: beta
     increment: Minor
     prevent-increment:
@@ -53,10 +52,8 @@ branches:
       when-current-commit-tagged: false
     track-merge-target: false
     regex: ^releases?(?<BranchName>.+)
-    source-branches:
-    - main
-    - support
-    is-source-branch-for: []
+    source-branches: ['develop', 'hotfix', 'support','release', 'main']
+    is-source-branch-for: ['develop', 'feature', 'hotfix', 'support','release']
     tracks-release-branches: false
     is-release-branch: true
     is-main-branch: false
@@ -71,10 +68,10 @@ branches:
     track-merge-message: true
     regex: ^feature?(?<BranchName>.+)
     source-branches: ['main', 'develop', 'feature', 'hotfix', 'support','release']
-    is-source-branch-for: []
+    is-source-branch-for: ['feature']
     tracks-release-branches: false
     is-release-branch: false
-    is-main-branch: false
+    is-main-branch: true
     pre-release-weight: 30000
   pull-request:
     mode: ContinuousDelivery
@@ -101,10 +98,8 @@ branches:
     prevent-increment:
       when-current-commit-tagged: false
     regex: ^hotfix(es)?[\/-](?<BranchName>.+)
-    source-branches:
-    - main
-    - support
-    is-source-branch-for: []
+    source-branches: ['main', 'develop', 'feature', 'hotfix', 'support','release']
+    is-source-branch-for: ['hotfix', 'support','release','develop']
     is-release-branch: true
     is-main-branch: false
     pre-release-weight: 30000
@@ -115,9 +110,8 @@ branches:
       of-merged-branch: true
     track-merge-target: false
     regex: ^support[\/-](?<BranchName>.+)
-    source-branches:
-    - main
-    is-source-branch-for: []
+    source-branches: ['main', 'develop', 'feature', 'hotfix', 'support','release']
+    is-source-branch-for: ['develop', 'feature', 'hotfix', 'support','release']
     tracks-release-branches: false
     is-release-branch: false
     is-main-branch: true
